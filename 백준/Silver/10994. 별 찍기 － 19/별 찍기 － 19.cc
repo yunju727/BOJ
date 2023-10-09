@@ -15,13 +15,12 @@ int draw_star(int n, char **a, int size) {
 		int draw_size = 4 * n - 3;
 		int start_spot = 2 * (size - n);
 		int end_spot = start_spot + draw_size-1;
+        
 		for (int i = start_spot; i <= end_spot; i++) {
 			a[i][start_spot] = '*';
 			a[i][end_spot] = '*';
-		}
-		for (int j = start_spot; j <= end_spot; j++) {
-			a[start_spot][j] = '*';
-			a[end_spot][j] = '*';
+			a[start_spot][i] = '*';
+			a[end_spot][i] = '*';
 		}
 		return draw_star(next_n, a, size);
 		
